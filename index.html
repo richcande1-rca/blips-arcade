@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#07091a" />
   <style>
     :root{
-      color-scheme: dark;
+      color-scheme:dark;
       --bg:#07091a;
       --bg2:#0e1433;
       --panel:rgba(13,18,45,.82);
@@ -48,8 +48,8 @@
       background-image:
         radial-gradient(circle, rgba(255,255,255,.75) 0 1px, transparent 1.45px),
         radial-gradient(circle, rgba(116,247,255,.55) 0 1px, transparent 1.55px);
-      background-size:44px 44px, 83px 83px;
-      background-position:0 0, 21px 19px;
+      background-size:44px 44px,83px 83px;
+      background-position:0 0,21px 19px;
       mask-image:linear-gradient(to bottom, black, rgba(0,0,0,.72));
     }
 
@@ -130,13 +130,11 @@
 
     h1{
       margin:0;
-      font-size:clamp(46px, 10vw, 112px);
+      font-size:clamp(46px,10vw,112px);
       line-height:.88;
       letter-spacing:-.08em;
       text-transform:uppercase;
-      text-shadow:
-        0 0 18px rgba(116,247,255,.24),
-        0 0 42px rgba(255,112,207,.18);
+      text-shadow:0 0 18px rgba(116,247,255,.24),0 0 42px rgba(255,112,207,.18);
     }
 
     h1 span{
@@ -175,7 +173,7 @@
       text-decoration:none;
       font-weight:800;
       box-shadow:inset 0 0 0 1px rgba(255,255,255,.035);
-      transition:transform .14s ease, border-color .14s ease, background .14s ease;
+      transition:transform .14s ease,border-color .14s ease,background .14s ease;
     }
 
     .btn:hover,.btn:focus-visible{
@@ -235,13 +233,13 @@
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(12, 1fr);
+      grid-template-columns:repeat(12,1fr);
       gap:16px;
     }
 
     .card{
       grid-column:span 4;
-      min-height:360px;
+      min-height:380px;
       border:1px solid var(--line);
       border-radius:24px;
       padding:18px;
@@ -257,7 +255,7 @@
 
     .card.featured{
       grid-column:span 6;
-      min-height:390px;
+      min-height:410px;
     }
 
     .card::after{
@@ -279,7 +277,7 @@
       justify-content:space-between;
       gap:12px;
       position:relative;
-      z-index:1;
+      z-index:2;
     }
 
     .icon{
@@ -291,7 +289,7 @@
       place-items:center;
       background:rgba(255,255,255,.06);
       font-size:27px;
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,.04), 0 0 28px rgba(116,247,255,.08);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 0 28px rgba(116,247,255,.08);
     }
 
     .status{
@@ -309,109 +307,42 @@
     .status.weird{color:var(--gold)}
 
     .preview{
-      height:112px;
+      height:150px;
       margin-top:16px;
       border:1px solid rgba(255,255,255,.12);
       border-radius:18px;
       overflow:hidden;
       position:relative;
       z-index:1;
-      background:#080b1f;
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,.04), inset 0 -28px 54px rgba(0,0,0,.22);
+      background:#050716;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 10px 28px rgba(0,0,0,.22);
     }
 
-    .preview::before{
-      content:"";
+    .preview::after{
+      content:"Live preview";
       position:absolute;
-      inset:-40%;
-      background:linear-gradient(110deg, transparent 35%, rgba(255,255,255,.13) 50%, transparent 65%);
-      animation:sweep 3.4s linear infinite;
+      left:10px;
+      bottom:10px;
+      padding:5px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.44);
+      color:rgba(245,247,255,.78);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.05em;
+      text-transform:uppercase;
       pointer-events:none;
     }
 
-    .preview span{
-      position:absolute;
-      left:14px;
-      bottom:12px;
-      padding:6px 9px;
-      border-radius:999px;
-      background:rgba(0,0,0,.34);
-      border:1px solid rgba(255,255,255,.12);
-      color:rgba(245,247,255,.86);
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-    }
-
-    .pv-gothic{
-      background:
-        radial-gradient(circle at 76% 22%, rgba(255,219,122,.78) 0 12px, transparent 13px),
-        linear-gradient(180deg,#171229,#080912 70%);
-    }
-
-    .pv-gothic::after{
-      content:"";
-      position:absolute;
-      left:50%;
-      top:24px;
-      width:34px;
-      height:54px;
-      border-radius:18px 18px 4px 4px;
-      border:1px solid rgba(255,255,255,.16);
-      transform:translateX(-50%);
-      background:rgba(255,255,255,.05);
-      animation:pulse 2.4s ease-in-out infinite;
-    }
-
-    .pv-orbit{
-      background:
-        radial-gradient(circle at 50% 50%, rgba(255,219,122,.9) 0 5px, transparent 6px),
-        radial-gradient(circle at 50% 50%, transparent 0 24px, rgba(116,247,255,.52) 25px 26px, transparent 27px 43px, rgba(255,112,207,.42) 44px 45px, transparent 46px),
-        #070a1f;
-      animation:pulse 2.8s ease-in-out infinite;
-    }
-
-    .pv-lock{
-      background:
-        radial-gradient(circle at 50% 50%, transparent 0 26px, rgba(116,247,255,.55) 27px 36px, transparent 37px),
-        linear-gradient(145deg,#111832,#060816);
-      animation:spinBg 4s linear infinite;
-    }
-
-    .pv-move{
-      background:
-        repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 9px, transparent 9px 19px),
-        linear-gradient(180deg,#14172c,#080a17);
-      animation:slideBg 2.8s linear infinite;
-    }
-
-    .pv-grid{
-      background:
-        linear-gradient(90deg, transparent 31%, rgba(255,255,255,.25) 31% 33%, transparent 33% 64%, rgba(255,255,255,.25) 64% 66%, transparent 66%),
-        linear-gradient(0deg, transparent 31%, rgba(255,255,255,.25) 31% 33%, transparent 33% 64%, rgba(255,255,255,.25) 64% 66%, transparent 66%),
-        linear-gradient(145deg,#10162f,#060816);
-      animation:pulse 2.6s ease-in-out infinite;
-    }
-
-    .pv-spin{
-      background:conic-gradient(from 0deg, #f5f7ff 0 25%, #101326 25% 50%, #f5f7ff 50% 75%, #101326 75% 100%);
-      animation:spinBg 3.4s linear infinite;
-    }
-
-    .pv-tree{
-      background:
-        radial-gradient(circle at 50% 38%, rgba(157,255,176,.78) 0 34px, transparent 35px),
-        linear-gradient(180deg,#0f1830,#08110f);
-      animation:sway 3s ease-in-out infinite;
-    }
-
-    .pv-screen{
-      background:
-        radial-gradient(circle at 24% 38%, rgba(116,247,255,.8) 0 18px, transparent 19px),
-        radial-gradient(circle at 68% 58%, rgba(255,112,207,.7) 0 24px, transparent 25px),
-        linear-gradient(145deg,#07091a,#111a3c);
-      animation:floaty 3.6s ease-in-out infinite;
+    .preview iframe{
+      width:300%;
+      height:300%;
+      border:0;
+      transform:scale(.3334);
+      transform-origin:top left;
+      pointer-events:none;
+      background:#050716;
     }
 
     .card h3{
@@ -420,7 +351,7 @@
       line-height:1;
       letter-spacing:-.045em;
       position:relative;
-      z-index:1;
+      z-index:2;
     }
 
     .card p{
@@ -428,7 +359,7 @@
       color:var(--muted);
       line-height:1.5;
       position:relative;
-      z-index:1;
+      z-index:2;
     }
 
     .tags{
@@ -437,7 +368,7 @@
       gap:8px;
       margin:16px 0 18px;
       position:relative;
-      z-index:1;
+      z-index:2;
     }
 
     .tag{
@@ -455,7 +386,7 @@
       gap:10px;
       margin-top:auto;
       position:relative;
-      z-index:1;
+      z-index:2;
     }
 
     .play{
@@ -483,17 +414,6 @@
       text-align:center;
     }
 
-    @keyframes sweep{from{transform:translateX(-35%)} to{transform:translateX(35%)}}
-    @keyframes pulse{50%{filter:brightness(1.28)}}
-    @keyframes spinBg{to{background-position:120px 0; transform:rotate(.001turn)}}
-    @keyframes slideBg{to{background-position:120px 0, 0 0}}
-    @keyframes sway{50%{transform:translateY(-2px) rotate(.7deg)}}
-    @keyframes floaty{50%{background-position:18px -6px, -12px 8px, 0 0}}
-
-    @media (prefers-reduced-motion: reduce){
-      *,*::before,*::after{animation:none !important; scroll-behavior:auto !important}
-    }
-
     @media (max-width:900px){
       .card,.card.featured{grid-column:span 6}
       .section-head{display:block}
@@ -501,7 +421,7 @@
     }
 
     @media (max-width:640px){
-      .wrap{width:min(100% - 22px, 1160px); padding-top:14px}
+      .wrap{width:min(100% - 22px,1160px); padding-top:14px}
       header{min-height:auto; padding-top:12px}
       .hero{border-radius:24px; padding:24px}
       .hero::before{inset:10px; border-radius:18px}
@@ -509,6 +429,8 @@
       .hero-actions,.card-actions{display:grid}
       .btn{width:100%}
       .marquee span{font-size:11px}
+      .preview{height:130px}
+      .preview iframe{width:260%; height:260%; transform:scale(.385)}
     }
   </style>
 </head>
@@ -545,7 +467,9 @@
             <div class="icon" aria-hidden="true">📖</div>
             <span class="status ready">Playable</span>
           </div>
-          <div class="preview pv-gothic" aria-hidden="true"><span>Preview</span></div>
+          <div class="preview" aria-label="Gothic Chronicle live preview">
+            <iframe src="https://richcande1-rca.github.io/Game/" title="Gothic Chronicle preview" loading="lazy" tabindex="-1"></iframe>
+          </div>
           <h3>Gothic Chronicle</h3>
           <p>Under construction, but playable. Our most complex project so far.</p>
           <div class="tags">
@@ -564,7 +488,9 @@
             <div class="icon" aria-hidden="true">🪐</div>
             <span class="status ready">Featured</span>
           </div>
-          <div class="preview pv-orbit" aria-hidden="true"><span>Preview</span></div>
+          <div class="preview" aria-label="Orbit live preview">
+            <iframe src="https://richcande1-rca.github.io/orbit/" title="Orbit preview" loading="lazy" tabindex="-1"></iframe>
+          </div>
           <h3>Orbit</h3>
           <p>Tap outward through orbital rings and avoid hazards.</p>
           <div class="tags">
@@ -583,7 +509,9 @@
             <div class="icon" aria-hidden="true">🔐</div>
             <span class="status ready">Puzzle</span>
           </div>
-          <div class="preview pv-lock" aria-hidden="true"><span>Preview</span></div>
+          <div class="preview" aria-label="Safe Cracker live preview">
+            <iframe src="https://richcande1-rca.github.io/safe-cracker/" title="Safe Cracker preview" loading="lazy" tabindex="-1"></iframe>
+          </div>
           <h3>Safe Cracker</h3>
           <p>Use clues to find the combination and open the safe.</p>
           <div class="tags">
@@ -602,7 +530,9 @@
             <div class="icon" aria-hidden="true">📦</div>
             <span class="status weird">Arcade</span>
           </div>
-          <div class="preview pv-move" aria-hidden="true"><span>Preview</span></div>
+          <div class="preview" aria-label="Warehouse Madness live preview">
+            <iframe src="https://richcande1-rca.github.io/richcande1-rca-warehouse-madness/" title="Warehouse Madness preview" loading="lazy" tabindex="-1"></iframe>
+          </div>
           <h3>Warehouse Madness</h3>
           <p>A fast arcade game built around movement and timing.</p>
           <div class="tags">
@@ -620,7 +550,9 @@
             <div class="icon" aria-hidden="true">⭕</div>
             <span class="status ready">Strategy</span>
           </div>
-          <div class="preview pv-grid" aria-hidden="true"><span>Preview</span></div>
+          <div class="preview" aria-label="Expanding Tic-Tac-Toe live preview">
+            <iframe src="https://richcande1-rca.github.io/expanding-tictactoe/" title="Expanding Tic-Tac-Toe preview" loading="lazy" tabindex="-1"></iframe>
+          </div>
           <h3>Expanding Tic-Tac-Toe</h3>
           <p>A tic-tac-toe variant where the board expands after draws.</p>
           <div class="tags">
@@ -638,7 +570,9 @@
             <div class="icon" aria-hidden="true">☯️</div>
             <span class="status toy">Toy</span>
           </div>
-          <div class="preview pv-spin" aria-hidden="true"><span>Preview</span></div>
+          <div class="preview" aria-label="Yin-Yang Spinner live preview">
+            <iframe src="https://richcande1-rca.github.io/yin-yang-spinner/" title="Yin-Yang Spinner preview" loading="lazy" tabindex="-1"></iframe>
+          </div>
           <h3>Yin-Yang Spinner</h3>
           <p>A visual spinner with adjustable motion and effects.</p>
           <div class="tags">
@@ -656,7 +590,9 @@
             <div class="icon" aria-hidden="true">🌳</div>
             <span class="status toy">Experiment</span>
           </div>
-          <div class="preview pv-tree" aria-hidden="true"><span>Preview</span></div>
+          <div class="preview" aria-label="Tree live preview">
+            <iframe src="https://richcande1-rca.github.io/tree/" title="Tree preview" loading="lazy" tabindex="-1"></iframe>
+          </div>
           <h3>Tree</h3>
           <p>A small visual experiment.</p>
           <div class="tags">
@@ -674,7 +610,9 @@
             <div class="icon" aria-hidden="true">✨</div>
             <span class="status toy">Visual</span>
           </div>
-          <div class="preview pv-screen" aria-hidden="true"><span>Preview</span></div>
+          <div class="preview" aria-label="Screensaver live preview">
+            <iframe src="https://richcande1-rca.github.io/screensaver/" title="Screensaver preview" loading="lazy" tabindex="-1"></iframe>
+          </div>
           <h3>Screensaver</h3>
           <p>An ambient visual project.</p>
           <div class="tags">
