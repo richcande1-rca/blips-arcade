@@ -345,6 +345,32 @@
       background:#050716;
     }
 
+    .preview-muted{
+      display:grid;
+      place-items:center;
+      background:
+        radial-gradient(circle at 28% 36%, rgba(116,247,255,.72) 0 20px, transparent 21px),
+        radial-gradient(circle at 68% 58%, rgba(255,112,207,.62) 0 26px, transparent 27px),
+        radial-gradient(circle at 78% 22%, rgba(255,219,122,.55) 0 12px, transparent 13px),
+        linear-gradient(145deg,#07091a,#111a3c);
+    }
+
+    .preview-muted::after{content:"Preview muted"}
+
+    .muted-label{
+      position:relative;
+      z-index:2;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:999px;
+      background:rgba(0,0,0,.48);
+      color:rgba(245,247,255,.88);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
     .card h3{
       margin:20px 0 8px;
       font-size:clamp(24px,3vw,34px);
@@ -610,14 +636,15 @@
             <div class="icon" aria-hidden="true">✨</div>
             <span class="status toy">Visual</span>
           </div>
-          <div class="preview" aria-label="Screensaver live preview">
-            <iframe src="https://richcande1-rca.github.io/screensaver/" title="Screensaver preview" loading="lazy" tabindex="-1"></iframe>
+          <div class="preview preview-muted" aria-label="Screensaver muted preview">
+            <span class="muted-label">Sound off</span>
           </div>
           <h3>Screensaver</h3>
           <p>An ambient visual project.</p>
           <div class="tags">
             <span class="tag">screensaver</span>
             <span class="tag">ambient</span>
+            <span class="tag">sound off</span>
           </div>
           <div class="card-actions">
             <a class="btn play" href="https://richcande1-rca.github.io/screensaver/">Launch</a>
