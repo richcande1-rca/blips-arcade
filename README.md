@@ -1,9 +1,10 @@
 # Blips Arcade
 
-A tiny GitHub Pages launch page for Rich's browser games and experiments.
+A GitHub Pages launch page for Rich's browser games and experiments.
 
 ## Current cabinet
 
+- Game
 - Orbit
 - Safe Cracker
 - Warehouse Madness
@@ -12,7 +13,7 @@ A tiny GitHub Pages launch page for Rich's browser games and experiments.
 - Tree
 - Screensaver
 
-## Back room
+## On hold
 
 - Fractal is intentionally not listed yet because it is unstable.
 
