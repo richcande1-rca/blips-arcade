@@ -46,21 +46,94 @@
     </section><footer>Blips Arcade · games, toys, and experiments.</footer>
   </main>
   <script>
+    const frames = () => Array.from(document.querySelectorAll('.game-frame'));
+
+    function rememberFrames(){
+      frames().forEach((frame)=>{
+        if(!frame.dataset.previewSrc){
+          frame.dataset.previewSrc = frame.getAttribute('src') || '';
+        }
+      });
+    }
+
     function muteFrame(frame){
       try{
-        const win=frame.contentWindow;
-        const doc=frame.contentDocument||win.document;
-        const mute=()=>{doc.querySelectorAll('audio,video').forEach((media)=>{media.muted=true;media.defaultMuted=true;media.volume=0})};
+        const win = frame.contentWindow;
+        const doc = frame.contentDocument || win.document;
+        const mute = () => {
+          doc.querySelectorAll('audio,video').forEach((media)=>{
+            media.muted = true;
+            media.defaultMuted = true;
+            media.volume = 0;
+          });
+        };
         mute();
-        const observer=new win.MutationObserver(mute);
-        observer.observe(doc.documentElement,{childList:true,subtree:true});
-        win.addEventListener('play',mute,true);
-        win.addEventListener('volumechange',mute,true);
+        if(!frame.dataset.muteObserverAttached){
+          const observer = new win.MutationObserver(mute);
+          observer.observe(doc.documentElement,{childList:true,subtree:true});
+          win.addEventListener('play',mute,true);
+          win.addEventListener('volumechange',mute,true);
+          frame.dataset.muteObserverAttached = '1';
+        }
       }catch(err){
-        frame.dataset.muteWarning='preview mute limited';
+        frame.dataset.muteWarning = 'preview mute limited';
       }
     }
-    document.querySelectorAll('.game-frame').forEach((frame)=>{frame.addEventListener('load',()=>muteFrame(frame));});
+
+    function muteAllFrames(){
+      frames().forEach(muteFrame);
+    }
+
+    function stopPreviewFrames(){
+      frames().forEach((frame)=>{
+        const currentSrc = frame.getAttribute('src') || '';
+        if(currentSrc && currentSrc !== 'about:blank'){
+          frame.dataset.previewSrc = currentSrc;
+        }
+        frame.removeAttribute('src');
+        frame.setAttribute('src','about:blank');
+        frame.dataset.muteObserverAttached = '';
+      });
+    }
+
+    function restorePreviewFrames(){
+      frames().forEach((frame)=>{
+        const wantedSrc = frame.dataset.previewSrc;
+        const currentSrc = frame.getAttribute('src') || '';
+        if(wantedSrc && (!currentSrc || currentSrc === 'about:blank')){
+          frame.setAttribute('src',wantedSrc);
+        }
+      });
+    }
+
+    rememberFrames();
+    frames().forEach((frame)=>{frame.addEventListener('load',()=>muteFrame(frame));});
+
+    window.addEventListener('pagehide',()=>{
+      muteAllFrames();
+      stopPreviewFrames();
+    });
+
+    window.addEventListener('beforeunload',()=>{
+      muteAllFrames();
+      stopPreviewFrames();
+    });
+
+    window.addEventListener('pageshow',()=>{
+      restorePreviewFrames();
+      setTimeout(muteAllFrames,100);
+      setTimeout(muteAllFrames,900);
+    });
+
+    document.addEventListener('visibilitychange',()=>{
+      if(!document.hidden){
+        restorePreviewFrames();
+        setTimeout(muteAllFrames,100);
+        setTimeout(muteAllFrames,900);
+      }else{
+        muteAllFrames();
+      }
+    });
   </script>
 </body>
 </html>
