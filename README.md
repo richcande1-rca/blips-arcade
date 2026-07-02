@@ -4,7 +4,7 @@ A GitHub Pages launch page for Rich's browser games and experiments.
 
 ## Current cabinet
 
-- Game
+- Gothic Chronicle — under construction, but playable
 - Orbit
 - Safe Cracker
 - Warehouse Madness
