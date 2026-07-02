@@ -4,18 +4,14 @@ A GitHub Pages launch page for Rich's browser games and experiments.
 
 ## Current cabinet
 
-- Gothic Chronicle — under construction, but playable
 - Orbit
+- Gothic Chronicle — under construction, but playable
 - Safe Cracker
 - Warehouse Madness
 - Expanding Tic-Tac-Toe
 - Yin-Yang Spinner
 - Tree
 - Screensaver
-
-## On hold
-
-- Fractal is intentionally not listed yet because it is unstable.
 
 ## Pages URL
 
