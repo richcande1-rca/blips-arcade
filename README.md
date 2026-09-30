@@ -5,8 +5,12 @@ A GitHub Pages launch page for Rich's browser games and experiments.
 ## Current cabinet
 
 - Orbit
+- Shut the Box
+- Ballistics
+- Miami Nights
 - Gothic Chronicle — under construction, but playable
 - Safe Cracker
+- Tower of Hanoi
 - Warehouse Madness
 - Expanding Tic-Tac-Toe
 - Yin-Yang Spinner
