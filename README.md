@@ -8,6 +8,7 @@ A GitHub Pages launch page for Rich's browser games and experiments.
 - Shut the Box
 - Ballistics
 - Miami Nights
+- Luck Machine — Classic high scores and Backwards low scores
 - Gothic Chronicle — under construction, but playable
 - Safe Cracker
 - Tower of Hanoi
